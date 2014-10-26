@@ -56,6 +56,8 @@ column_names <- as.vector(column_names$V2)
 # in order to match the number of columns in the merged_data variable
 column_names <- append(column_names, "Subject")
 column_names <- append(column_names, "Activity")
+# Make the column names more readable by removing the parantheses
+column_names <- gsub("\\(\\)", "", column_names)
 
 # Set column names to merged_data data frame based on the column names in features.txt file
 colnames(merged_data) <- column_names
